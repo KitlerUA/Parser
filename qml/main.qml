@@ -12,7 +12,6 @@ ApplicationWindow {
     x: Screen.width / 2 - width / 2
     y: Screen.height / 2 - height / 2
 
-
     Column {
         anchors.centerIn: parent
         Row {
@@ -42,7 +41,6 @@ ApplicationWindow {
             }
         }
         Row {
-            id: row
             Button {
                 text: "Convert"
                 onClicked: {
@@ -73,6 +71,7 @@ ApplicationWindow {
             console.log("Canceled")
         }
     }
+
     FileDialog {
         id: dirDialog
         visible : false
@@ -91,24 +90,19 @@ ApplicationWindow {
             var cleanPath = decodeURIComponent(path);
             outputDirectory.text = cleanPath+"/"
         }
-        onRejected: {
-            console.log("Canceled")
-        }
     }
+
     MessageDialog {
         id: messageDialog
         title: "Status"
-        text: ""
         onAccepted: {
-
-
         }
-
     }
+
     Connections {
         target: qmlBridge
         onSendToQml: {
-            messageDialog.text = data
+            messageDialog.text = detText
             messageDialog.open()
         }
     }

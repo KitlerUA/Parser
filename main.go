@@ -13,7 +13,7 @@ import (
 type QmlBridge struct {
 	core.QObject
 
-	_ func(data string)        `signal:sendToQml`
+	_ func(detText string)        `signal:sendToQml`
 	_ func(fileName, dir string) `slot:sendToGo` //only slots can return something
 }
 
@@ -33,7 +33,7 @@ func main() {
 	// Create a QML application engine
 	engine := qml.NewQQmlApplicationEngine(nil)
 	engine.RootContext().SetContextProperty("qmlBridge", qmlBridge)
-	qmlBridge.ConnectSendToQml(func(data string){
+	qmlBridge.ConnectSendToQml(func(detText string){
 
 	})
 	qmlBridge.ConnectSendToGo(func(fileName, dir string){
