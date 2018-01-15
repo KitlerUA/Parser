@@ -40,11 +40,11 @@ func main() {
 		var err error
 		var warnings string
 		if warnings, err = parser.Parse(fileName, dir);err!=nil{
-			qmlBridge.SendToQml(fmt.Sprintf("%s", err))
+			qmlBridge.SendToQml(fmt.Sprintf("%s<br>", err))
 		} else if warnings == "" {
-			qmlBridge.SendToQml("Successfully parsed and safe")
+			qmlBridge.SendToQml("Successfully parsed and safe<br>")
 		} else {
-			qmlBridge.SendToQml(fmt.Sprintf("Parsed with warnings:\n%s", warnings))
+			qmlBridge.SendToQml(fmt.Sprintf("Parsed with warnings:<br>%s", warnings))
 		}
 	})
 	// Load the main qml file
