@@ -39,7 +39,7 @@ func main() {
 	qmlBridge.ConnectSendToGo(func(fileName, dir string){
 		var err error
 		var warnings string
-		if err, warnings = parser.Parse(fileName, dir);err!=nil{
+		if warnings, err = parser.Parse(fileName, dir);err!=nil{
 			qmlBridge.SendToQml(fmt.Sprintf("%s", err))
 		} else if warnings == "" {
 			qmlBridge.SendToQml("Successfully parsed and safe")
