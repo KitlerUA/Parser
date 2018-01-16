@@ -1,0 +1,11 @@
+vendor
+deploy
+.idea
+*.cpp
+*.h
+*.qrc
+moc.go
+moc_cgo_windows_windows_amd64.go
+rcc_cgo_windows_windows_amd64.go
+moc_cgo_linux_linux_amd64.go
+rcc_cgo_linux_linux_amd64.go

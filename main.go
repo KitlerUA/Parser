@@ -49,7 +49,6 @@ func main() {
 	})
 	// Load the main qml file
 	engine.Load(core.NewQUrl3("qrc:/qml/main.qml", 0))
-
 	// Execute app
 	gui.QGuiApplication_Exec()
 }
