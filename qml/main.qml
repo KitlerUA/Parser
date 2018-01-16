@@ -133,6 +133,7 @@ ApplicationWindow {
                 Text {
                     id: statusText
                     font.family: "DejaVuSans"
+                    font.pixelSize: 16
                     width: flick.width
                     height: flick.height
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -152,8 +153,10 @@ ApplicationWindow {
             }
             Button {
                 id: okBut
+                width: 120
                 Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
                 text: "OK"
+                font.pixelSize: 16
                 onClicked: {
                     popup.close()
                 }
