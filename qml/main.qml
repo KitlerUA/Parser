@@ -158,22 +158,11 @@ ApplicationWindow {
                 }
             }
         }
-
-    }
-
-
-    MessageDialog {
-        id: messageDialog
-        title: "Status"
-        onAccepted: {
-        }
     }
 
     Connections {
         target: qmlBridge
         onSendToQml: {
-            //messageDialog.text = detText
-            // messageDialog.open()
             statusText.text = detText
             popup.open()
         }
