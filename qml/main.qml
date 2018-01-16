@@ -94,15 +94,23 @@ ApplicationWindow {
         id: popup
         x: window.width/2 - width/2
         y: window.height/2 - height/2
+        rightMargin: 5
+        leftMargin: 5
+        bottomMargin: 10
+        topMargin: 10
+        font.capitalization: Font.MixedCase
+        font.family: "DejaVuSans"
         visible: false
         modal: true
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
         contentWidth: statusText.implicitWidth
         contentHeight: statusText.implicitHeight
+
         background: Rectangle {
+            radius: 8
             anchors.fill: parent
-            color: "#c7c7c7"
+            color: "#d6d6d6"
             border.width: 1
             Layout.alignment: Qt.AlignCenter
         }
@@ -116,24 +124,29 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumHeight: 100
-                Layout.minimumWidth: 230
+                Layout.minimumWidth: 100
                 Layout.alignment: Qt.AlignCenter
                 contentWidth: statusText.paintedWidth
                 contentHeight: statusText.paintedHeight+20.0
                 clip: true
                 ScrollBar.vertical: ScrollBar { id: vbar; active: false }
+
                 Text {
                     id: statusText
+                    font.family: "DejaVuSans"
                     width: flick.width
                     height: flick.height
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     anchors.fill: parent
                     textFormat: Qt.RichText
                     wrapMode: Text.WordWrap
-
                     text: qsTr("text")
                     horizontalAlignment: Text.AlignJustify
                     verticalAlignment: Text.AlignVCenter
+                    leftPadding: 5
+                    rightPadding: 5
+                    topPadding: 10
+                    bottomPadding: 5
                 }
             }
             Button {
