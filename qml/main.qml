@@ -114,8 +114,7 @@ ApplicationWindow {
             border.width: 1
             Layout.alignment: Qt.AlignCenter
         }
-        contentItem:
-            ColumnLayout{
+        contentItem: ColumnLayout {
             anchors.fill: parent
             Layout.alignment: Qt.AlignCenter
             Flickable {
@@ -123,11 +122,11 @@ ApplicationWindow {
                 maximumFlickVelocity: 500
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.minimumHeight: 100
+                Layout.minimumHeight: 50
                 Layout.minimumWidth: 100
                 Layout.alignment: Qt.AlignCenter
                 contentWidth: statusText.paintedWidth
-                contentHeight: statusText.paintedHeight+20.0
+                contentHeight: statusText.paintedHeight
                 clip: true
                 ScrollBar.vertical: ScrollBar { id: vbar; active: false }
 
@@ -140,13 +139,15 @@ ApplicationWindow {
                     anchors.fill: parent
                     textFormat: Qt.RichText
                     wrapMode: Text.WordWrap
-                    text: qsTr("text")
                     horizontalAlignment: Text.AlignJustify
                     verticalAlignment: Text.AlignVCenter
-                    leftPadding: 5
-                    rightPadding: 5
-                    topPadding: 10
-                    bottomPadding: 5
+                    leftPadding: 10
+                    topPadding: 15
+                    bottomPadding: 10
+                    onTextChanged: {
+                        popup.contentWidth = implicitWidth
+                        popup.contentHeight = implicitHeight>49+okBut.width?implicitHeight:50+okBut.width
+                    }
                 }
             }
             Button {

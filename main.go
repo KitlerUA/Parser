@@ -44,7 +44,7 @@ func main() {
 		} else if warnings == "" {
 			qmlBridge.SendToQml("Successfully parsed and safe<br>")
 		} else {
-			qmlBridge.SendToQml(fmt.Sprintf("Parsed with warnings:<br>%s", warnings))
+			qmlBridge.SendToQml(fmt.Sprintf("<b><i>Parsed with warnings:</i></b><br><br>%s", warnings))
 		}
 	})
 	// Load the main qml file
