@@ -6,7 +6,7 @@ import (
 	"github.com/therecipe/qt/qml"
 	"github.com/therecipe/qt/quickcontrols2"
 	"os"
-	"github.com/KitlerUA/csvparser/parser"
+	"github.com/KitlerUA/xlsxparser/parser"
 	"fmt"
 )
 
